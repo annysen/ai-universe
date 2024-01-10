@@ -8,8 +8,9 @@ function App() {
   return (
     <div>
       <Header />
-      <Button>Click me</Button>
+      <Button>Sort by Date</Button>
       <Card />
+      <Button>See More</Button>
     </div>
   );
 }
