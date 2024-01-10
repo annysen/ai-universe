@@ -3,24 +3,22 @@ import React from "react";
 const SingleCard = (props) => {
   //   console.log(props.singleData);
 
-  const { name, description, image, features, published_in } = props.singleData;
+  const { id, name, description, image, features, published_in } =
+    props.singleData;
 
-  console.log(features);
   return (
     <>
       <div className="card card-compact w-full bg-base-100 shadow-2xl">
         <figure className="w-full h-64 p-5">
-          <img className="w-full" src={image} />
+          <img className="w-full" src={image && image} />
         </figure>
         <div className="card-body">
           <h4 className="text-xl font-semibold">Features:</h4>
           {features.map((feature, index) => (
             <>
-              <ol>
-                <li>
-                  {index + 1}. {feature}
-                </li>
-              </ol>
+              <p>
+                {index + 1}. {feature}
+              </p>
             </>
           ))}
           {/* <div className="card-actions justify-end">
@@ -56,8 +54,13 @@ const SingleCard = (props) => {
             </span>
 
             {/* arrow btn section  */}
-            <span>
-              <button className=" font-bold text-red-900 hover:text-red-500">
+            <span onClick={() => props.handleId(id)}>
+              <button
+                className=" btn  text-red-900 hover:text-red-500"
+                onClick={() =>
+                  document.getElementById("my_modal_1").showModal()
+                }
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
