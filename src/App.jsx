@@ -10,7 +10,6 @@ function App() {
       <Header />
       <Button>Sort by Date</Button>
       <Card />
-      <Button>See More</Button>
     </div>
   );
 }
